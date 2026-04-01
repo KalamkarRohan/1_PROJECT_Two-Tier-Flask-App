@@ -1,0 +1,83 @@
+# 🚀 Two-Tier Flask Application Deployment on AWS EKS
+
+## 📌 Project Overview
+This project demonstrates the deployment of a two-tier web application using Kubernetes on AWS EKS.
+
+- Frontend: Flask (Python)
+- Backend: MySQL
+- Orchestration: Kubernetes (AWS EKS)
+
+The application is deployed using Kubernetes Deployments and exposed via a LoadBalancer service.
+
+---
+
+## 🏗 Architecture
+
+User → AWS LoadBalancer → Flask App (Pod) → MySQL Service → MySQL Pod
+
+---
+
+## ⚙️ Tech Stack
+
+- Docker
+- Kubernetes (EKS)
+- AWS
+- Python (Flask)
+- MySQL
+- kubectl
+- YAML
+
+---
+
+## 🔥 Features
+
+- Multi-tier application deployment
+- Service-to-service communication using Kubernetes DNS (mysql-svc)
+- External access using LoadBalancer
+- Debugging of real-world issues (CrashLoopBackOff, DB errors)
+- Database initialization and management
+
+---
+
+## 📸 Screenshots
+
+### Kubernetes Pods & Services
+
+
+### Application UI
+
+
+
+---
+
+## 🚀 Deployment Steps
+
+### 1. Deploy MySQL
+kubectl apply -f mysql-deployment.yml  
+kubectl apply -f mysql-svc.yml  
+
+### 2. Deploy Flask App
+kubectl apply -f two-tier-app-deployment.yml  
+
+### 3. Expose Application
+kubectl apply -f two-tier-app-svc.yml  
+
+---
+
+## ⚠️ Challenges Faced
+
+- MySQL connection error (`Unknown server host`)
+- YAML syntax issues (case sensitivity)
+- CrashLoopBackOff debugging
+- Missing database table issue
+
+---
+
+## 🧠 Key Learnings
+
+- Kubernetes service discovery
+- Pod lifecycle management
+- Debugging containerized applications
+- Working with AWS EKS for the first time
+
+---
